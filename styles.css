@@ -3,8 +3,11 @@
    Estilo: Brutalist Editorial con toques modernos
    ============================================ */
 
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+/* Google Fonts Import (para mono y body) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* Neco Font - Display */
+@import url('neco.css');
 
 /* ============================================
    CSS Variables
@@ -23,7 +26,7 @@
     --color-gray-800: #262626;
     
     /* Typography */
-    --font-display: 'Bebas Neue', sans-serif;
+    --font-display: 'Neco-Black', 'Neco-Variable', sans-serif;
     --font-mono: 'Space Mono', monospace;
     --font-body: 'DM Sans', sans-serif;
     
@@ -262,10 +265,10 @@ img {
 /* Outline Text Effect for Title */
 .title-outline {
     font-family: var(--font-display);
-    font-size: clamp(3.5rem, 18vw, 15rem);
-    font-weight: 400;
-    line-height: 0.9;
-    letter-spacing: 0.02em;
+    font-size: clamp(3rem, 15vw, 12rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
     color: transparent;
     -webkit-text-stroke: 2px var(--color-black);
     text-stroke: 2px var(--color-black);
