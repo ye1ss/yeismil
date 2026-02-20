@@ -75,9 +75,9 @@
                     <div class="resources-grid" id="resources-list">
                         
                         <!-- RECURSO 1: Automatización n8n -->
-                        <article class="resource-card" data-resource-id="n8n-workflow-001">
+                        <article class="resource-card" data-resource-id="n8n-plantilla">
                             <div class="resource-checkbox">
-                                <input type="checkbox" name="resource" value="n8n-workflow-001" aria-label="Seleccionar Workflow n8n">
+                                <input type="checkbox" name="resource" value="n8n-plantilla" aria-label="Seleccionar Workflow n8n">
                             </div>
                             <div class="resource-icon">
                                 <span class="material-symbols-outlined">sync</span>
@@ -90,9 +90,9 @@
                         </article>
 
                         <!-- RECURSO 2: GPT Personalizado -->
-                        <article class="resource-card" data-resource-id="gpt-assistant-001">
+                        <article class="resource-card" data-resource-id="gpt-prompts">
                             <div class="resource-checkbox">
-                                <input type="checkbox" name="resource" value="gpt-assistant-001" aria-label="Seleccionar GPT Asistente">
+                                <input type="checkbox" name="resource" value="gpt-prompts" aria-label="Seleccionar GPT Asistente">
                             </div>
                             <div class="resource-icon">
                                 <span class="material-symbols-outlined">smart_toy</span>
@@ -102,36 +102,6 @@
                                 Prompt completo para crear tu propio GPT de productividad personal.
                             </p>
                             <span class="resource-tag">IA</span>
-                        </article>
-
-                        <!-- RECURSO 3: Sistema Notion -->
-                        <article class="resource-card" data-resource-id="notion-system-001">
-                            <div class="resource-checkbox">
-                                <input type="checkbox" name="resource" value="notion-system-001" aria-label="Seleccionar Sistema Notion">
-                            </div>
-                            <div class="resource-icon">
-                                <span class="material-symbols-outlined">dashboard</span>
-                            </div>
-                            <h3 class="resource-title">SISTEMA NOTION</h3>
-                            <p class="resource-description">
-                                Template de gestión de proyectos con automatizaciones integradas.
-                            </p>
-                            <span class="resource-tag">Productividad</span>
-                        </article>
-
-                        <!-- RECURSO 4: Plantilla Emails -->
-                        <article class="resource-card" data-resource-id="email-templates-001">
-                            <div class="resource-checkbox">
-                                <input type="checkbox" name="resource" value="email-templates-001" aria-label="Seleccionar Plantillas Email">
-                            </div>
-                            <div class="resource-icon">
-                                <span class="material-symbols-outlined">mail</span>
-                            </div>
-                            <h3 class="resource-title">EMAILS FRÍOS</h3>
-                            <p class="resource-description">
-                                Pack de 10 plantillas de emails fríos que convierten.
-                            </p>
-                            <span class="resource-tag">Ventas</span>
                         </article>
 
                         <!-- ==========================================
@@ -350,30 +320,17 @@
         // CONFIGURACIÓN - CAMBIAR ESTOS VALORES
         // ==========================================
         const CONFIG = {
-            // Tu endpoint del backend (ver instrucciones abajo)
-            API_ENDPOINT: '/api/subscribe',
-            
-            // IDs de listas en Brevo (los obtienes en Contactos > Listas)
-            NEWSLETTER_LIST_ID: 2,      // Cambia por tu ID real
-            KAKEBO_LIST_ID: 3,          // Cambia por tu ID real
-            
-            // URLs de los recursos (donde están alojados los archivos)
+            API_ENDPOINT: 'https://yeismil-api.yeismil18.workers.dev',
+            NEWSLETTER_LIST_ID: 3,
+            KAKEBO_LIST_ID: 4,
             RESOURCES: {
-                'n8n-workflow-001': {
-                    name: 'Workflow N8N',
-                    url: 'https://tu-dominio.com/recursos/workflow-n8n.json'
+                'n8n-plantilla': {
+                    name: 'Plantilla n8n',
+                    url: 'URL_DE_TU_ARCHIVO'
                 },
-                'gpt-assistant-001': {
-                    name: 'GPT Asistente',
-                    url: 'https://tu-dominio.com/recursos/gpt-prompt.txt'
-                },
-                'notion-system-001': {
-                    name: 'Sistema Notion',
-                    url: 'https://tu-dominio.com/recursos/notion-template.html'
-                },
-                'email-templates-001': {
-                    name: 'Emails Fríos',
-                    url: 'https://tu-dominio.com/recursos/email-templates.pdf'
+                'gpt-prompts': {
+                    name: 'Prompts GPT',
+                    url: 'URL_DE_TU_ARCHIVO'
                 }
             }
         };
