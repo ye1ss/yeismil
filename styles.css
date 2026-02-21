@@ -214,6 +214,13 @@ img {
     overflow: hidden;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero {
+        min-height: 55vh;
+        min-height: 55dvh;
+    }
+}
+
 /* Background decorative elements */
 .hero::before {
     content: '';
@@ -242,7 +249,7 @@ img {
 /* Outline Text Effect for Title */
 .title-outline {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 15vw, 12rem);
+    font-size: clamp(3rem, 10vw, 12rem);
     font-weight: 900;
     line-height: 1;
     letter-spacing: -0.02em;
@@ -761,18 +768,18 @@ img {
     gap: var(--space-md);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .form-inline-content {
         display: grid;
         grid-template-columns: 1fr auto auto;
         align-items: end;
         gap: var(--space-lg);
     }
-    
+
     .form-inline-content .checkbox-group {
         margin: 0;
     }
-    
+
     .form-inline-content .btn-primary {
         margin-top: 0;
         width: auto;

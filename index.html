@@ -236,17 +236,6 @@
                                 >
                             </div>
 
-                            <div class="checkbox-group">
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="early_access" value="true" checked>
-                                    <span style="font-size: 0.75rem;">Quiero acceso anticipado</span>
-                                </label>
-                                <label class="checkbox-item">
-                                    <input type="checkbox" name="launch_discount" value="true" checked>
-                                    <span style="font-size: 0.75rem;">Quiero descuento exclusivo de lanzamiento</span>
-                                </label>
-                            </div>
-
                             <button type="submit" class="btn-secondary" style="width: 100%;">
                                 Unirme a la lista
                             </button>
@@ -281,8 +270,8 @@
                     <p class="footer-title">Contacto</p>
                     <div class="footer-links">
                         <a href="mailto:hola@yeismil.com" class="footer-link">hola@yeismil.com</a>
-                        <a href="https://twitter.com/yeismil" target="_blank" rel="noopener" class="footer-link">Twitter (X)</a>
-                        <a href="https://linkedin.com/in/yeismil" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+                        <a href="https://x.com/YeismilR" target="_blank" rel="noopener" class="footer-link">Twitter (X)</a>
+                        <a href="https://www.linkedin.com/in/yeismildelrosario/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
                     </div>
                 </div>
 
@@ -298,7 +287,7 @@
 
             <div class="footer-bottom">
                 <p class="footer-copyright">
-                    © 2024 Yeismil. Todos los derechos reservados.
+                    © 2026 Yeismil.
                 </p>
                 <div class="footer-legal">
                     <a href="/aviso-legal.html">Aviso Legal</a>
@@ -326,7 +315,7 @@
             RESOURCES: {
                 'n8n-plantilla': {
                     name: 'Plantilla n8n',
-                    url: 'URL_DE_TU_ARCHIVO'
+                    url: 'https://yeismil.vercel.app/recursos/workflow-n8n.json'
                 },
                 'gpt-prompts': {
                     name: 'Prompts GPT',
@@ -529,19 +518,16 @@
             const form = e.target;
             const submitBtn = form.querySelector('button[type="submit"]');
             const email = form.querySelector('input[type="email"]').value;
-            const earlyAccess = form.querySelector('[name="early_access"]').checked;
-            const launchDiscount = form.querySelector('[name="launch_discount"]').checked;
-            
+
             submitBtn.classList.add('btn-loading');
 
             try {
                 await subscribeToBrevo({
                     email,
-                    type: 'kakebo_waitlist',
+                    type: 'waitlist',
                     listId: CONFIG.KAKEBO_LIST_ID,
                     attributes: {
-                        EARLY_ACCESS: earlyAccess,
-                        LAUNCH_DISCOUNT: launchDiscount
+                        EARLY_BIRD: true
                     }
                 });
 
