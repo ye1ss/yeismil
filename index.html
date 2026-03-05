@@ -145,16 +145,16 @@
                                     >
                                 </div>
 
-                                <div class="checkbox-group">
+                                <!--<div class="checkbox-group">
                                     <label class="checkbox-item">
-                                        <input type="checkbox" name="only_resource" id="only-resource" value="true">
+                                       <input type="checkbox" name="only_resource" id="only-resource" value="true">
                                         <span>Solo quiero el recurso (no guardes mi email)</span>
                                     </label>
                                     <label class="checkbox-item">
                                         <input type="checkbox" name="subscribe_newsletter" id="subscribe-newsletter" value="true" checked>
                                         <span>Quiero recibir lo que vayas construyendo</span>
                                     </label>
-                                </div>
+                                </div>-->
 
                                 <button type="submit" class="btn-primary" style="width: 100%;">
                                     <span>Enviar recursos seleccionados</span>
@@ -413,21 +413,6 @@
         // ==========================================
         // Form Subscription Logic
         // ==========================================
-        const onlyResourceCheckbox = document.getElementById('only-resource');
-        const subscribeCheckbox = document.getElementById('subscribe-newsletter');
-
-        onlyResourceCheckbox?.addEventListener('change', () => {
-            if (onlyResourceCheckbox.checked) {
-                subscribeCheckbox.checked = false;
-            }
-        });
-
-        subscribeCheckbox?.addEventListener('change', () => {
-            if (subscribeCheckbox.checked) {
-                onlyResourceCheckbox.checked = false;
-            }
-        });
-
         // ==========================================
         // Toast Notifications
         // ==========================================
@@ -468,9 +453,7 @@
             const form = e.target;
             const submitBtn = form.querySelector('button[type="submit"]');
             const email = form.querySelector('#email').value;
-            const onlyResource = document.getElementById('only-resource').checked;
-            const subscribeNewsletter = document.getElementById('subscribe-newsletter').checked;
-            
+
             updateSelectedResources();
             
             if (!selectedResourcesInput.value) {
@@ -494,8 +477,8 @@
                     email,
                     type: 'resources',
                     resources,
-                    subscribeNewsletter: subscribeNewsletter && !onlyResource,
-                    listId: subscribeNewsletter ? CONFIG.NEWSLETTER_LIST_ID : null
+                    subscribeNewsletter: true,
+                    listId: CONFIG.NEWSLETTER_LIST_ID
                 });
 
                 showToast('¡Revisa tu email para confirmar!', 'success');

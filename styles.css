@@ -771,13 +771,9 @@ img {
 @media (min-width: 1024px) {
     .form-inline-content {
         display: grid;
-        grid-template-columns: 1fr auto auto;
+        grid-template-columns: 1fr auto;
         align-items: end;
         gap: var(--space-lg);
-    }
-
-    .form-inline-content .checkbox-group {
-        margin: 0;
     }
 
     .form-inline-content .btn-primary {
