@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { projects } from '../content/projects.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const SITE = 'https://yeismil.com';
+const SITE = 'https://www.yeismil.com';
 const EMAIL = 'yeismil18@gmail.com';
 const IMG = '/assets/img/projects/';
 
