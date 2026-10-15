@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Yeismil del Rosario Rosado — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --ink: #111418;
+    --muted: #5b6370;
+    --line: #e4e7ec;
+    --accent: #0066ff;
+    --accent-soft: #eef4ff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--ink);
+    font-size: 8.9pt;
+    line-height: 1.42;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 13mm 14mm 11mm;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Header */
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 4.2mm; margin-bottom: 4.5mm; }
+  h1 { font-size: 23pt; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .role { font-size: 11pt; font-weight: 600; color: var(--accent); margin-top: 1mm; }
+  .contact { display: flex; flex-wrap: wrap; gap: 1mm 4.5mm; margin-top: 2.6mm; color: var(--muted); font-size: 8.4pt; }
+  .contact a { color: inherit; text-decoration: none; }
+  .contact b { color: var(--ink); font-weight: 600; }
+
+  .summary { font-size: 9.2pt; color: #2a2f37; margin-bottom: 4.5mm; }
+  .summary strong { color: var(--ink); }
+
+  .grid { display: grid; grid-template-columns: 1fr 55mm; gap: 7mm; flex: 1; }
+
+  h2 {
+    font-size: 8pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 2.4mm; padding-bottom: 1.2mm; border-bottom: 1px solid var(--line);
+  }
+  section { margin-bottom: 4.6mm; }
+
+  .item { margin-bottom: 3mm; }
+  .item:last-child { margin-bottom: 0; }
+  .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; }
+  .item-title { font-weight: 700; font-size: 9.4pt; }
+  .item-title span { font-weight: 500; color: var(--muted); }
+  .date { font-size: 8pt; color: var(--muted); white-space: nowrap; font-weight: 500; }
+  ul { list-style: none; margin-top: 0.8mm; }
+  li { position: relative; padding-left: 3.2mm; margin-bottom: 0.5mm; color: #2a2f37; }
+  li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 1.3mm; height: 1.3mm; border-radius: 50%; background: var(--accent); }
+  li b { color: var(--ink); font-weight: 600; }
+
+  .project { margin-bottom: 2.5mm; }
+  .project:last-child { margin-bottom: 0; }
+  .project-name { font-weight: 700; font-size: 9.2pt; }
+  .badge {
+    display: inline-block; font-size: 6.8pt; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+    padding: 0.25mm 1.6mm; border-radius: 1mm; margin-left: 1.2mm; vertical-align: 1px;
+    background: var(--accent-soft); color: var(--accent);
+  }
+  .badge.dev { background: #f2f3f5; color: var(--muted); }
+  .project p { color: #2a2f37; }
+  .stack { font-size: 7.8pt; color: var(--muted); margin-top: 0.3mm; }
+
+  /* Sidebar */
+  aside section { margin-bottom: 5mm; }
+  .skill-group { margin-bottom: 2.6mm; }
+  .skill-label { font-weight: 600; font-size: 8.2pt; margin-bottom: 1mm; }
+  .tags { display: flex; flex-wrap: wrap; gap: 1mm; }
+  .tag { font-size: 7.6pt; padding: 0.45mm 1.7mm; border: 1px solid var(--line); border-radius: 1mm; color: #2a2f37; background: #fafbfc; }
+  .edu { margin-bottom: 2.6mm; }
+  .edu-title { font-weight: 600; font-size: 8.6pt; line-height: 1.3; }
+  .edu-meta { font-size: 7.9pt; color: var(--muted); }
+  .plain { color: #2a2f37; }
+  .plain div { margin-bottom: 0.8mm; }
+
+  .cta {
+    margin-top: auto; padding: 2.6mm 3mm; border-radius: 1.5mm; background: var(--accent-soft);
+    font-size: 8.1pt; color: #2a2f37;
+  }
+  .cta a { color: var(--accent); font-weight: 700; text-decoration: none; }
+  aside { display: flex; flex-direction: column; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Yeismil del Rosario Rosado</h1>
+    <div class="role">Desarrollador Full-Stack · React · Next.js · TypeScript · Supabase</div>
+    <div class="contact">
+      <span><b>Madrid</b></span>
+      <a href="tel:+34672442216">672 442 216</a>
+      <a href="mailto:yeismil18@gmail.com">yeismil18@gmail.com</a>
+      <a href="https://yeismil.com"><b>yeismil.com</b></a>
+      <a href="https://www.linkedin.com/in/yeismildelrosario">linkedin.com/in/yeismildelrosario</a>
+      <a href="https://github.com/ye1ss">github.com/ye1ss</a>
+    </div>
+  </header>
+
+  <p class="summary">
+    Desarrollador full-stack que construye <strong>productos completos de principio a fin</strong>: idea, diseño,
+    base de datos, despliegue y primeros usuarios. Tengo varias aplicaciones propias en producción y desarrollo
+    software a medida para clientes como autónomo. Trabajo a diario con <strong>React, Next.js, TypeScript y Supabase</strong>,
+    y automatizo procesos con <strong>n8n e IA</strong>. Busco unirme a un equipo donde aportar desde el primer día y seguir creciendo.
+  </p>
+
+  <div class="grid">
+    <main>
+      <section>
+        <h2>Experiencia</h2>
+
+        <div class="item">
+          <div class="item-head">
+            <div class="item-title">Desarrollador Full-Stack <span>· Freelance (autónomo)</span></div>
+            <div class="date">Mar 2026 – Actualidad</div>
+          </div>
+          <ul>
+            <li>Diseño, desarrollo y despliegue de <b>SaaS y webs a medida</b> para clientes, de la idea a producción.</li>
+            <li><b>Plataforma de entrenamiento a medida</b> para un entrenador personal: planificación de rutinas, seguimiento de clientes y progreso.</li>
+            <li><b>Ranuse Design</b>: web corporativa, <b>CRM interno</b> y <b>área privada con login</b> donde los clientes siguen su proyecto.</li>
+            <li>Webs para <b>Casajova</b> y <b>Felina Élite</b>. Automatizaciones con <b>n8n</b> para captación y seguimiento de leads por email.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-head">
+            <div class="item-title">Responsable de administración <span>· Bar-restaurante</span></div>
+            <div class="date">Actualidad</div>
+          </div>
+          <ul>
+            <li>Facturación, gestión de empleados y proveedores.</li>
+            <li>Digitalicé la gestión del negocio con <b>herramientas propias</b>: contabilidad automatizada y control horario (Yont).</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-head">
+            <div class="item-title">Desarrollador web <span>· AES Multimedia (prácticas)</span></div>
+            <div class="date">2024</div>
+          </div>
+          <ul>
+            <li>Desarrollo y mantenimiento de webs con HTML, CSS, JavaScript y PHP. Bases de datos SQL y control de versiones con Git.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-head">
+            <div class="item-title">Gestión de bases de datos <span>· Telynet (prácticas)</span></div>
+            <div class="date">2023</div>
+          </div>
+          <ul>
+            <li>Gestión y actualización de la base de datos de la empresa.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Productos propios</h2>
+
+        <div class="project">
+          <div class="project-name">Repfy <span class="badge">En producción</span></div>
+          <p>SaaS para entrenadores personales: rutinas, seguimiento de clientes, progreso e informes en PDF. Ya con sus primeros usuarios y más de 450 commits.</p>
+          <div class="stack">React · TypeScript · Supabase · React Query · Zustand · Sentry</div>
+        </div>
+
+        <div class="project">
+          <div class="project-name">Yont <span class="badge">En producción</span></div>
+          <p>App de control horario para que los empleados de un local fichen: códigos QR, firma digital e informes PDF para el registro de jornada.</p>
+          <div class="stack">Next.js · TypeScript · Supabase · Stripe · Tailwind</div>
+        </div>
+
+        <div class="project">
+          <div class="project-name">VentaCasasRD <span class="badge">En producción</span></div>
+          <p>Portal inmobiliario de compra, venta y alquiler en República Dominicana, con más de 10 propietarios publicando sus viviendas.</p>
+          <div class="stack">JavaScript · Supabase · Vercel Edge Functions · Resend · Leaflet</div>
+        </div>
+
+        <div class="project">
+          <div class="project-name">SaaS de gestión para bar</div>
+          <p>Lee las facturas del correo, las clasifica en carpetas y genera la contabilidad en Excel automáticamente. Incluye un CRM con asesor de IA (API de Gemini).</p>
+          <div class="stack">Node.js · Express · PostgreSQL · n8n · Gemini API</div>
+        </div>
+
+        <div class="project">
+          <div class="project-name">Auconez <span class="badge dev">En desarrollo</span></div>
+          <p>Reserva de citas para peluquerías por WhatsApp, sincronizada con Google Calendar y un panel de gestión.</p>
+          <div class="stack">Next.js · TypeScript · Supabase · Resend</div>
+        </div>
+      </section>
+    </main>
+
+    <aside>
+      <section>
+        <h2>Tecnologías</h2>
+        <div class="skill-group">
+          <div class="skill-label">Frontend</div>
+          <div class="tags">
+            <span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">React</span>
+            <span class="tag">Next.js</span><span class="tag">Tailwind CSS</span><span class="tag">HTML</span>
+            <span class="tag">CSS</span><span class="tag">Vite</span><span class="tag">Zustand</span>
+            <span class="tag">React Query</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Backend y datos</div>
+          <div class="tags">
+            <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Supabase</span>
+            <span class="tag">PostgreSQL</span><span class="tag">SQL</span><span class="tag">REST APIs</span>
+            <span class="tag">PHP</span><span class="tag">Java</span><span class="tag">Python</span><span class="tag">C#</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">IA y automatización</div>
+          <div class="tags">
+            <span class="tag">n8n</span><span class="tag">Gemini API</span><span class="tag">Claude Code</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Herramientas</div>
+          <div class="tags">
+            <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Vercel</span>
+            <span class="tag">Stripe</span><span class="tag">Resend</span><span class="tag">Sentry</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Formación</h2>
+        <div class="edu">
+          <div class="edu-title">CFGS Desarrollo de Aplicaciones Multiplataforma</div>
+          <div class="edu-meta">The Core School · 2023 – 2024</div>
+        </div>
+        <div class="edu">
+          <div class="edu-title">Certificado AI Fundamentals</div>
+          <div class="edu-meta">Udia · 2024</div>
+        </div>
+        <div class="edu">
+          <div class="edu-title">CFGM Actividades Comerciales</div>
+          <div class="edu-meta">IES Virgen de la Paz · 2022 – 2023</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Idiomas</h2>
+        <div class="plain">
+          <div><b>Español</b> · Nativo</div>
+          <div><b>Inglés</b> · Intermedio</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Otros</h2>
+        <div class="plain">
+          <div>Carnet de conducir B y A2</div>
+        </div>
+      </section>
+
+      <div class="cta">
+        Proyectos, demos y capturas en<br><a href="https://yeismil.com">yeismil.com</a>
+      </div>
+    </aside>
+  </div>
+</div>
+</body>
+</html>

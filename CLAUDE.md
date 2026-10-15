@@ -4,53 +4,46 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Landing page personal de la marca **YEISMIL** (Tech Builder). Stack: HTML/CSS/JS vanilla + Cloudflare Workers como backend + Brevo como servicio de email.
+**yeismil.com** — personal portfolio of Yeismil del Rosario (full-stack developer, Madrid). Static HTML/CSS/JS, no framework, no runtime dependencies. English by default with a Spanish toggle; dark by default with a light mode.
+
+The previous version (free-resources landing with Brevo + Cloudflare Worker) is preserved in the git tag `v1-recursos`.
 
 ## Architecture
 
-**No build system.** Todo es estático — se edita directamente y se sube al hosting.
-
 ```
-index.html        → Landing principal (hero, recursos, kakebo waitlist, footer)
-styles.css        → Todos los estilos (incluye neco.css via @import)
-worker.js         → Cloudflare Worker que maneja las suscripciones de email
-confirmado.html   → Página post-confirmación de email
-aviso-legal.html / privacidad.html / cookies.html → Páginas legales
-fonts/            → Fuente Neco (ITF) en woff2/woff/ttf
+content/projects.mjs   → ALL project content (EN + ES). Edit this to add/change projects.
+scripts/build.mjs      → Generates index.html and projects/<slug>/index.html from the content.
+index.html             → GENERATED. Home: cover + profile + socials + projects + about.
+projects/<slug>/       → GENERATED. One case-study page per project with `page: true`.
+assets/site.css        → All styles (tokens on :root / [data-theme="light"]).
+assets/site.js         → Theme toggle, EN/ES toggle, copy email, scroll reveal, cover dot-field canvas.
+assets/img/projects/   → Project screenshots (WebP, 1600px wide desktop / 640px mobile).
+cv/                    → CV source (cv.html) and the PDF linked from the site.
+img/pulpo.png          → Favicon and current avatar placeholder.
 ```
 
-## Email Flow
+**Never edit `index.html` or `projects/` by hand** — change `content/projects.mjs` or `scripts/build.mjs` and run:
 
-Hay dos flujos de suscripción manejados en `worker.js`:
+```bash
+node scripts/build.mjs
+```
 
-1. **Recursos gratuitos** (`type: 'resources'`): envía email con los links de descarga + opcionalmente añade al newsletter (double opt-in via Brevo)
-2. **Kakebo waitlist** (`type: 'kakebo_waitlist'`): añade al usuario a la lista de espera con atributos `EARLY_ACCESS` y `LAUNCH_DISCOUNT`
+## Conventions
 
-El frontend llama a `CONFIG.API_ENDPOINT` (`/api/subscribe`) que mapea al Worker de Cloudflare. El Worker necesita las env vars `BREVO_API_KEY` y `ALLOWED_ORIGIN`.
+- **Bilingual content**: every visible string is rendered twice, `<x lang="en">` and `<x lang="es">`; CSS hides the inactive one via `html[data-lang]`. In the build script use the helpers `t(en, es, tag?)` / `bi({en, es}, tag?)`.
+- **Theme/lang** are set before paint by an inline script in `<head>` from `localStorage` (`theme`, `lang`).
+- **Design language**: hairline borders, square corners (no rounded cards), Inter Tight + JetBrains Mono, accent `--accent` (#2f6bff dark / #0050ff light). Avatar uses a solid blue offset shadow.
+- **Images**: `img()` in the build reads WebP dimensions to set width/height (no layout shift). Thumbnails on the home share a `view-transition-name` with the case-study hero, so navigation animates between them (cross-document View Transitions).
+- **Performance**: the cover canvas caches colours (updated on `themechange`), pauses when off-screen or the tab is hidden, and respects `prefers-reduced-motion`.
 
-## Configuración en index.html
+## Screenshots
 
-El objeto `CONFIG` (línea ~352) es el único lugar donde configurar:
-- `API_ENDPOINT`: URL del Cloudflare Worker
-- `NEWSLETTER_LIST_ID` / `KAKEBO_LIST_ID`: IDs de listas en Brevo
-- `RESOURCES`: URLs reales de los archivos a enviar por email
+Project screenshots were captured from the live sites with Playwright (from `repfy/node_modules/playwright-core`) at 1440×900 @2x and 390×844 @2x, then converted with `cwebp -resize 1600 0 -q 78` (mobile: 640).
 
-## Design System
+## Local preview
 
-- **Fuente display**: Neco-Black (custom, cargada desde `fonts/`)
-- **Fuente body**: DM Sans (Google Fonts)
-- **Fuente mono**: Space Mono (Google Fonts)
-- **Color primario**: `#0066FF` (azul eléctrico)
-- **Estilo**: Brutalist editorial — bordes duros, sombras offset en azul
+```bash
+python3 -m http.server 5174
+```
 
-Las tarjetas de recursos usan un shadow-offset con `::before` (fondo azul desplazado 6-8px). El estado `.selected` cambia ese fondo a negro.
-
-## Recursos activos
-
-Actualmente hay 2 recursos en la grid (n8n workflow + GPT asistente). El grid está configurado a `repeat(2, 1fr)` en desktop. Para añadir más recursos: copiar un `<article class="resource-card">` con un nuevo `data-resource-id` único, y añadir la entry correspondiente en `CONFIG.RESOURCES`.
-
-## Despliegue
-
-1. Subir `worker.js` a Cloudflare Workers con las env vars configuradas
-2. El resto de archivos va al hosting estático (Cloudflare Pages, Vercel, etc.)
-3. Actualizar `ALLOWED_ORIGIN` en el Worker y `API_ENDPOINT` en `index.html`
+Paths are absolute (`/assets/...`), so serve from the repo root.

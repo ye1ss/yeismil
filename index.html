@@ -1,162 +1,161 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en" data-theme="dark" data-lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="YEISMIL — Creo SaaS para solucionar problemas. Lo construyo en público.">
-    <meta name="author" content="Yeismil">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="YEISMIL | Tech Builder">
-    <meta property="og:description" content="Creo SaaS para solucionar problemas. Lo construyo en público.">
-    <meta property="og:type" content="website">
-
-    <title>YEISMIL | Tech Builder</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="/img/pulpo.png" type="image/png" sizes="32x32">
-    <link rel="apple-touch-icon" href="/img/pulpo.png">
-
-    <!-- Material Symbols -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yeismil del Rosario — Full-stack developer</title>
+<meta name="description" content="Full-stack developer in Madrid. I build SaaS products, CRMs and automations from idea to production.">
+<meta name="author" content="Yeismil del Rosario">
+<link rel="canonical" href="https://yeismil.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yeismil del Rosario — Full-stack developer">
+<meta property="og:description" content="Full-stack developer in Madrid. I build SaaS products, CRMs and automations from idea to production.">
+<meta property="og:url" content="https://yeismil.com/">
+<meta property="og:image" content="https://yeismil.com/assets/img/projects/repfy-hero.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="/img/pulpo.png" type="image/png">
+<script>
+  (function () {
+    var d = document.documentElement; d.classList.remove('no-js');
+    try {
+      var t = localStorage.getItem('theme'); if (t) d.dataset.theme = t;
+      var l = localStorage.getItem('lang') || 'en';
+      d.dataset.lang = l; d.lang = l;
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
-
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor" id="cursor"></div>
 
-    <!-- Navigation -->
-    <header class="site-nav">
-        <div class="container">
-            <a href="/" class="nav-logo">YEISMIL</a>
-            <nav class="nav-links">
-                <a href="/" class="nav-link active">Inicio</a>
-                <a href="/recursos.html" class="nav-link">Recursos</a>
-            </nav>
-        </div>
-    </header>
+<header class="cover">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="wrap topbar">
+    <div class="mail mono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:yeismil18@gmail.com">yeismil18@gmail.com</a><button class="copy" data-copy="yeismil18@gmail.com" aria-label="Copy email"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
+    <div class="controls">
+      <div class="lang mono" role="group" aria-label="Language"><button data-set-lang="en" aria-pressed="true">EN</button><button data-set-lang="es" aria-pressed="false">ES</button></div>
+      <button class="theme-btn" data-theme-toggle aria-label="Toggle dark / light mode"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+    </div>
+  </div>
+</header>
 
-    <main>
-        <!-- ==========================================
-             HERO
-             ========================================== -->
-        <section class="hero">
-            <div class="container">
-                <img src="/img/pulpo.png" alt="Yeismil"
-                    style="width: 56px; height: 56px; object-fit: contain; margin-bottom: 1rem;">
-                <h1 class="title-outline">YEISMIL</h1>
-                <p class="hero-subtitle">
-                    Creo SaaS para solucionar problemas.<br>
-                </p>
-                <div class="social-links">
-                    <a href="https://www.tiktok.com/@yeiismil" class="social-link" target="_blank"
-                        rel="noopener">TikTok</a>
-                    <a href="https://www.instagram.com/yeiismil" class="social-link" target="_blank"
-                        rel="noopener">Instagram</a>
-                    <a href="https://www.linkedin.com/in/yeismildelrosario/" class="social-link" target="_blank"
-                        rel="noopener">LinkedIn</a>
-                </div>
-            </div>
-        </section>
+<main class="wrap">
+  <div class="profile">
+    <div class="avatar rv" data-stagger><img src="/img/pulpo.png" alt="Yeismil del Rosario" width="116" height="116" fetchpriority="high"></div>
+    <h1 class="name rv" data-stagger>Yeismil del Rosario</h1>
+    <div class="role rv" data-stagger><span lang="en">Full-stack developer</span><span lang="es">Desarrollador full-stack</span></div>
+    <p class="bio rv" data-stagger><span lang="en">I build SaaS products, CRMs and automations from idea to production.</span><span lang="es">Construyo productos SaaS, CRMs y automatizaciones desde la idea hasta producción.</span> <span><span lang="en">Shipping my own apps and custom software for clients.</span><span lang="es">Lanzo mis propias apps y desarrollo software a medida para clientes.</span></span></p>
+    <div class="facts mono rv" data-stagger>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Madrid, <span lang="en">Spain</span><span lang="es">España</span></span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>React · Next.js · Supabase</span>
+    </div>
+    <nav class="socials rv" data-stagger aria-label="Social links">
+      <a class="social" href="https://www.instagram.com/yeiismil" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg><span>Instagram</span><span class="arr">↗</span></a>
+      <a class="social" href="https://github.com/ye1ss" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg><span>GitHub</span><span class="arr">↗</span></a>
+      <a class="social" href="https://www.linkedin.com/in/yeismildelrosario" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><span>LinkedIn</span><span class="arr">↗</span></a>
+      <a class="social" href="https://www.youtube.com/@yeiismil" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg><span>YouTube</span><span class="arr">↗</span></a>
+    </nav>
+  </div>
 
-        <!-- ==========================================
-             PROYECTOS
-             ========================================== -->
-        <section class="projects-section">
-            <div class="container">
-                <header class="section-header">
-                    <span class="section-tag">
-                        <span class="material-symbols-outlined" style="font-size: 14px;">rocket_launch</span>
-                        Proyectos
-                    </span>
-                    <h2 class="section-title">LO QUE<br>CONSTRUYO</h2>
-                </header>
+  <section id="projects">
+    <div class="sec-head rv"><h2><span lang="en">Projects</span><span lang="es">Proyectos</span></h2><span class="mono">(07)</span></div>
+    <div class="sub-head mono rv">— <span lang="en">My products</span><span lang="es">Mis productos</span></div>
+    
+    <a class="project rv" href="/projects/repfy/">
+      <div class="thumb"><img src="/assets/img/projects/repfy-hero.webp" alt="Repfy screenshot" width="1600" height="1000" fetchpriority="high" decoding="async" style="view-transition-name:shot-repfy"></div>
+      <div>
+        <div class="p-top"><span class="p-name">Repfy <span class="go">↗</span></span><span class="p-state mono live"><span lang="en">Live</span><span lang="es">En producción</span></span></div>
+        <p lang="en" class="p-desc">Training and nutrition platform for personal trainers.</p><p lang="es" class="p-desc">Plataforma de entrenamiento y nutrición para entrenadores personales.</p>
+        <div class="p-foot"><span class="p-stack mono">React / TypeScript / Supabase / Stripe</span><span class="p-more mono"><span lang="en">Case study →</span><span lang="es">Ver proyecto →</span></span></div>
+      </div>
+    </a>
+    <a class="project rv" href="/projects/yont/">
+      <div class="thumb"><img src="/assets/img/projects/yont-hero.webp" alt="Yont screenshot" width="1600" height="1000" fetchpriority="high" decoding="async" style="view-transition-name:shot-yont"></div>
+      <div>
+        <div class="p-top"><span class="p-name">Yont <span class="go">↗</span></span><span class="p-state mono live"><span lang="en">Live</span><span lang="es">En producción</span></span></div>
+        <p lang="en" class="p-desc">Staff clock-in that holds up to a labour inspection.</p><p lang="es" class="p-desc">El fichaje que aguanta una inspección de trabajo.</p>
+        <div class="p-foot"><span class="p-stack mono">Next.js / Supabase / Stripe</span><span class="p-more mono"><span lang="en">Case study →</span><span lang="es">Ver proyecto →</span></span></div>
+      </div>
+    </a>
+    <a class="project rv" href="/projects/ventacasasrd/">
+      <div class="thumb"><img src="/assets/img/projects/vcrd-hero.webp" alt="VentaCasasRD screenshot" width="1600" height="1000" loading="lazy" decoding="async" style="view-transition-name:shot-ventacasasrd"></div>
+      <div>
+        <div class="p-top"><span class="p-name">VentaCasasRD <span class="go">↗</span></span><span class="p-state mono live"><span lang="en">Live</span><span lang="es">En producción</span></span></div>
+        <p lang="en" class="p-desc">Real-estate marketplace for the Dominican Republic.</p><p lang="es" class="p-desc">Portal inmobiliario para República Dominicana.</p>
+        <div class="p-foot"><span class="p-stack mono">JavaScript / Supabase / Vercel</span><span class="p-more mono"><span lang="en">Case study →</span><span lang="es">Ver proyecto →</span></span></div>
+      </div>
+    </a>
+    <div class="project rv">
+      <div class="thumb logo"><img src="/assets/img/projects/auconez-logo.webp" alt="Auconez screenshot" width="240" height="240" loading="lazy" decoding="async"></div>
+      <div>
+        <div class="p-top"><span class="p-name">Auconez</span><span class="p-state mono building"><span lang="en">Building</span><span lang="es">En desarrollo</span></span></div>
+        <p lang="en" class="p-desc">Booking SaaS for hair salons and barbershops: a public booking link, staff agenda, promotions and monthly summary.</p><p lang="es" class="p-desc">SaaS de reservas para peluquerías y barberías: enlace público de citas, agenda del equipo, promociones y resumen del mes.</p>
+        <div class="p-foot"><span class="p-stack mono">Next.js / Supabase / TypeScript</span><span class="p-more mono"></span></div>
+      </div>
+    </div>
+    <div class="sub-head mono rv">— <span lang="en">Client work</span><span lang="es">Para clientes</span></div>
+    
+    <a class="project rv" href="/projects/ranuse/">
+      <div class="thumb"><img src="/assets/img/projects/ranuse-hero.webp" alt="Ranuse Design screenshot" width="1600" height="1000" loading="lazy" decoding="async" style="view-transition-name:shot-ranuse"></div>
+      <div>
+        <div class="p-top"><span class="p-name">Ranuse Design <span class="go">↗</span></span><span class="p-state mono live"><span lang="en">Live</span><span lang="es">En producción</span></span></div>
+        <p lang="en" class="p-desc">Website, CRM and client portal for a home-gym design studio.</p><p lang="es" class="p-desc">Web, CRM y portal de clientes para un estudio de diseño de home gyms.</p>
+        <div class="p-foot"><span class="p-stack mono">React / Express / Supabase</span><span class="p-more mono"><span lang="en">Case study →</span><span lang="es">Ver proyecto →</span></span></div>
+      </div>
+    </a>
+    <a class="project rv" href="/projects/casajova/">
+      <div class="thumb"><img src="/assets/img/projects/casajova-hero.webp" alt="Casa Jova screenshot" width="1600" height="1000" loading="lazy" decoding="async" style="view-transition-name:shot-casajova"></div>
+      <div>
+        <div class="p-top"><span class="p-name">Casa Jova <span class="go">↗</span></span><span class="p-state mono live"><span lang="en">Live</span><span lang="es">En producción</span></span></div>
+        <p lang="en" class="p-desc">Website for a neighbourhood restaurant in Madrid.</p><p lang="es" class="p-desc">Web para un bar-restaurante de barrio en Madrid.</p>
+        <div class="p-foot"><span class="p-stack mono">Next.js / Supabase / Tailwind</span><span class="p-more mono"><span lang="en">Case study →</span><span lang="es">Ver proyecto →</span></span></div>
+      </div>
+    </a>
+    <a class="project rv" href="https://felinaelite.com" target="_blank" rel="noopener">
+      <div class="thumb"><img src="/assets/img/projects/felina-hero.webp" alt="Felina Élite screenshot" width="1600" height="1000" loading="lazy" decoding="async"></div>
+      <div>
+        <div class="p-top"><span class="p-name">Felina Élite <span class="go">↗</span></span><span class="p-state mono live"><span lang="en">Live</span><span lang="es">En producción</span></span></div>
+        <p lang="en" class="p-desc">Website for an events and VIP experiences agency.</p><p lang="es" class="p-desc">Web para una agencia de eventos y experiencias VIP.</p>
+        <div class="p-foot"><span class="p-stack mono">Web design / Development</span><span class="p-more mono">felinaelite.com ↗</span></div>
+      </div>
+    </a>
+  </section>
 
-                <div class="projects-grid">
+  <section id="about">
+    <div class="sec-head rv"><h2><span lang="en">About</span><span lang="es">Sobre mí</span></h2><span class="mono">Madrid, ES</span></div>
+    <div class="about-text rv">
+      <p lang="en">I'm a full-stack developer who likes to own the whole thing: the idea, the design, the database, the deploy and the first users.</p><p lang="es">Soy desarrollador full-stack y me gusta encargarme de todo: la idea, el diseño, la base de datos, el despliegue y los primeros usuarios.</p>
+      <p lang="en">I started building software to fix problems in my own day-to-day, like automating the admin of the bar I manage. Today I ship <em>my own SaaS products</em> and build custom software for clients as a freelancer.</p>
+      <p lang="es">Empecé a programar para resolver problemas de mi propio día a día, como automatizar la administración del bar que gestiono. Hoy lanzo <em>mis propios productos SaaS</em> y desarrollo software a medida para clientes como freelance.</p>
+    </div>
 
-                    <!-- PROYECTO 1: Auconez -->
-                    <a href="https://auconez.com" class="project-card" target="_blank" rel="noopener">
-                        <span class="project-number">01 — ACTIVO</span>
-                        <h3 class="project-name">AUCONEZ</h3>
-                        <p class="project-desc">
-                            Los clientes de tu local reservan cita por WhatsApp.
-                            Tú lo ves en Google Calendar y en un dashboard.
-                            Sin apps extra, sin caos.
-                        </p>
-                        <span class="project-url">auconez.com</span>
-                    </a>
+    <div class="timeline">
+      <div class="tl-row rv"><span class="mono">2026 — <span lang="en">Now</span><span lang="es">Hoy</span></span><div><b><span lang="en">Full-stack developer</span><span lang="es">Desarrollador full-stack</span></b> <span class="sub">· Freelance</span></div></div>
+      <div class="tl-row rv"><span class="mono"><span lang="en">Now</span><span lang="es">Hoy</span></span><div><b><span lang="en">Business admin</span><span lang="es">Responsable de administración</span></b> <span class="sub">· <span lang="en">Bar-restaurant</span><span lang="es">Bar-restaurante</span></span></div></div>
+      <div class="tl-row rv"><span class="mono">2024</span><div><b><span lang="en">Web developer</span><span lang="es">Desarrollador web</span></b> <span class="sub">· AES Multimedia (<span lang="en">internship</span><span lang="es">prácticas</span>)</span></div></div>
+      <div class="tl-row rv"><span class="mono">2023 — 2024</span><div><b><span lang="en">Multiplatform App Development (HND)</span><span lang="es">CFGS Desarrollo de Aplicaciones Multiplataforma</span></b> <span class="sub">· The Core School</span></div></div>
+    </div>
 
-                    <!-- AÑADIR MÁS PROYECTOS AQUÍ — copia el bloque de arriba -->
+    <div class="kv rv">
+      <span class="mono">Frontend</span><div>JavaScript, TypeScript, React, Next.js, Tailwind CSS</div>
+      <span class="mono">Backend</span><div>Node.js, Express, Supabase, PostgreSQL, SQL</div>
+      <span class="mono"><span lang="en">AI &amp; automation</span><span lang="es">IA y automatización</span></span><div>n8n, Gemini API, Claude Code</div>
+      <span class="mono"><span lang="en">Tools</span><span lang="es">Herramientas</span></span><div>Git, Vercel, Stripe, Resend, Sentry</div>
+    </div>
 
-                </div>
-            </div>
-        </section>
-    </main>
+    <a class="btn rv" href="/cv/Yeismil-del-Rosario-CV.pdf" download><span><span lang="en">Download CV</span><span lang="es">Descargar CV</span></span><span>↓</span></a>
+  </section>
 
-    <!-- ==========================================
-         FOOTER
-         ========================================== -->
-    <footer class="footer" id="contacto">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <img src="/img/pulpo.png" alt="Yeismil"
-                        style="width: 64px; height: 64px; object-fit: contain; margin-bottom: 0.75rem;">
-                    <p class="footer-brand">YEISMIL</p>
-                    <p class="footer-tagline">Tech Builder • Construyo en público</p>
-                </div>
-                <div>
-                    <p class="footer-title">Contacto</p>
-                    <div class="footer-links">
-                        <a href="mailto:hola@yeismil.com" class="footer-link">hola@yeismil.com</a>
-                        <a href="https://www.tiktok.com/@yeismil" target="_blank" rel="noopener"
-                            class="footer-link">TikTok</a>
-                        <a href="https://www.instagram.com/yeiismil" target="_blank" rel="noopener"
-                            class="footer-link">Instagram</a>
-                        <a href="https://www.linkedin.com/in/yeismildelrosario/" target="_blank" rel="noopener"
-                            class="footer-link">LinkedIn</a>
-                    </div>
-                </div>
-                <div>
-                    <p class="footer-title">Páginas</p>
-                    <div class="footer-links">
-                        <a href="/" class="footer-link">Inicio</a>
-                        <a href="/recursos.html" class="footer-link">Recursos gratuitos</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-copyright">© 2026 Yeismil.</p>
-                <div class="footer-legal">
-                    <a href="/aviso-legal.html">Aviso Legal</a>
-                    <a href="/privacidad.html">Política de Privacidad</a>
-                    <a href="/cookies.html">Cookies</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+  <footer class="site-foot mono">
+    <span>© 2026 Yeismil del Rosario</span>
+    <a href="mailto:yeismil18@gmail.com">yeismil18@gmail.com</a>
+  </footer>
+</main>
 
-    <div class="toast" id="toast"></div>
-
-    <script>
-        // Custom Cursor
-        const cursor = document.getElementById('cursor');
-        if (window.matchMedia('(hover: hover)').matches && cursor) {
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-            document.querySelectorAll('a, button, .social-link, .project-card').forEach(el => {
-                el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-                el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-            });
-        }
-    </script>
+<script src="/assets/site.js" defer></script>
 </body>
-
 </html>
